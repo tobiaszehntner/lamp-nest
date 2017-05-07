@@ -12,6 +12,9 @@ int random_num[NUM_LEDS];
 void setup() {
   FastLED.addLeds<WS2811, DATA_PIN, RGB>(leds, NUM_LEDS);
   LEDS.setBrightness(255);  
+  for(int i=0; i < NUM_LEDS; i++) {
+    random_num[i] = i;
+  }
   shuffle(random_num, NUM_LEDS); 
   all_off();   
 }
